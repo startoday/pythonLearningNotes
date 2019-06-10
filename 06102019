@@ -1,1 +1,18 @@
+GUI (graphical user interface) such as file finders 
+eg  sed 's/dude/Colt/g' report.txt > report_new.txt  //sed:search and pop it to report_new
 
+Be familiar and confortable with command line
+
+file structure is a tree, all relative to a base ROOT director
+ root/
+ 
+ each additional level down adds a "/"
+ absolute path /Users/colt  // abs path always start with a / --which stands for the root
+ 
+ 
+ by default is at home directory and represent as "~"
+ 
+ pwd : print working directory
+ cd : change directory
+ 
+ 
