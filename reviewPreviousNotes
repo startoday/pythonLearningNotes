@@ -13,3 +13,24 @@
 3.constans:fixed vlues such as numbers, letters and strings are constants
   string constants use single quotes ('') or double quotes ("")
 
+
+4. try/except -- traceback
+try 里面任意一个die了直接走except，不会继续走下面的了--利用try来尝试危险，catch errors
+astr = ‘hello bob'
+try:
+  ister = int (astr)
+except: 
+  ister = -1   // usualy provide hints for where is wrong, can add a quit here
+  
+5.
+name = input('who are u?) // the input() will return a string
+print ('welcome', name)  // the comma will creat a space
+
+6. use # for comments in python
+
+7. python use indent to distinguish block, which is 4 spaces, it is better to use space than tab, to avoid difference between different editors
+
+8. python 里的print（） 有自动换行功效
+
+
+
