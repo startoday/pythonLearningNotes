@@ -1,0 +1,15 @@
+1.variables must stary with a letter or underscore_
+  CASE sensitive!!
+
+2. ** power
+   % remainder
+   /  不是整数除法，就是正常的除 （in python 3） python2 和 c++一样还是整数除法
+ 
+  x = 1 + 2**3/4*5  
+  print(x)  //1+8/4 *5 =1+2*5 =11.0
+  
+  1+1.0 // 2.0 - to float automatically
+  
+3.constans:fixed vlues such as numbers, letters and strings are constants
+  string constants use single quotes ('') or double quotes ("")
+
