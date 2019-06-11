@@ -16,3 +16,5 @@ file structure is a tree, all relative to a base ROOT director
  cd : change directory
  
  
+ type python3 to go into python3, otherwise is python  --2
+ 
