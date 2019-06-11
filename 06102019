@@ -18,3 +18,38 @@ file structure is a tree, all relative to a base ROOT director
  
  type python3 to go into python3, otherwise is python  --2
  
+use touch to create a new .py file 
+
+print("hello world") 
+//don't need the semi colon at end
+
+
+
+Math stuff
+
+use --type(9)
+will should the type of it, can be a variable name
+
+1+1.0 // 2.0 auto do the float convert for you 
+
+
+// --- Interger Division
+5//3   #1
+10//3  #3 (always round down)
+
+
+1/2   #0.5 python always get float
+
+2**3  #8
+
+49**0.5 #7
+
+13%2  #1
+
+
+
+
+
+
+
+
