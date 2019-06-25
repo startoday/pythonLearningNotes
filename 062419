@@ -1,0 +1,7 @@
+1. naming_conventions
+
+most variables should be lower case,
+CAPITAL_NAME usually is constants
+UpperCamelCase : refer to a class
+
+"dunder" for double underscore ***
