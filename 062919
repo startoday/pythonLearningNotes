@@ -3,7 +3,33 @@
 if name == "tony stark :
   use indent to distinguish
   print("you are Iron Man")
-elif name == "Peter Parker":
+elif name == "Peter Parker":  #you can have multiple elif, but only one else
   print("you are Spider Man")
+elif name == "Natasha":
+  print("you are Black Widom")
+elif name == "Thor":
+  print("you are Thor")
 else :
   print("you are Norm Man")
+------
+#这种没有之后的内容（indent的话会报错）
+if name == "tony stark :
+print("you are Iron Man")
+
+
+2. Truthiness
+things are natually false: empty objects, empty strings, None, and zero
+
+animal = input("say sth)
+if animal:   #没有input时自动不会做这些
+  print("you said sth)
+  
+  == test if they have the same value
+  
+  "A" < "a" # yep
+  
+  logical operators:
+  and, or, not
+  
+  age > 2 and age < 8
+  
