@@ -1,0 +1,9 @@
+1. conditional statements
+
+if name == "tony stark :
+  use indent to distinguish
+  print("you are Iron Man")
+elif name == "Peter Parker":
+  print("you are Spider Man")
+else :
+  print("you are Norm Man")
