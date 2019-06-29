@@ -12,4 +12,9 @@ dynamic typing vs statically-typed(variables are stuck with their originally-ass
 
 
 3. None (case sensitive!)
+(python version of NULL)
+can set new stuff with None if we haven't assign it 
+(want a container, but nothing here, and the type of None is Nonetype--only itself)
+
+
 
