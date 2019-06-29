@@ -1,0 +1,15 @@
+1.Some data types:
+bool (True, False, the first case has to be capital)
+int 
+str (a sequence of Unicode chars， “ ” or ‘’)
+list（an ordered sequence of values of other data types [1,2,3]) 
+dict ( a collection of key: values e.g. {"first_name":"Le", "last_name": "Lei"}
+
+
+2. Dynamic typing
+you can reassign variables to different types
+dynamic typing vs statically-typed(variables are stuck with their originally-assigned types)
+
+
+3. None (case sensitive!)
+
