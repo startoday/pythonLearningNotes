@@ -16,5 +16,45 @@ dynamic typing vs statically-typed(variables are stuck with their originally-ass
 can set new stuff with None if we haven't assign it 
 (want a container, but nothing here, and the type of None is Nonetype--only itself)
 
+4.Declaring strings
+doesn't matter if single or double, but better to stay it consistant
+
+msg = "he said "hello there !""  --- error, python read it "XX" +YY""
+msg2 = "he said 'hello there !'"  --- good 
+msg3 = 'he said "hello there !"'  --- good
+
+5.escape sequence
+str = "he said \"ha ha\""  --- good
+
+
+6. string concateration
+with “ +”
+user = "blue Boy"
+print("hello there" + user)  # hello therebuleBoy  ---不会自动给你加空格
+
+8 + "hello"  #error!
+guess = 9
+print("your guess is" + guess) #error!
+name = "col"
+name += "S"  # name now  = colS #also works for numbers
+
+
+7.string format
+interpolate  #插入
+f-strings (python 3.6+)
+x = 10 
+formatted = f"I told you {x} times!" #不可以忘了这个f！
+#you can also do math in the {}
+
+# in python 2 .format() --play ground only support it
+print("the {} is ).format(sth)
+
+
+first = "Colt"
+last = "Steele"
+
+formatted = "First Name: {}, Last Name: {}". format(first, last) #可以直接在string 后加
+
+
 
 
