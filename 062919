@@ -35,4 +35,22 @@ if animal:   #没有input时自动不会做这些
   if not isWeekend():
     do th
   
+3.is vs ==
+is check with the memory and == checks value
+is--checking equality
+ a = 1
+ a == 1 #True
+ a is 1 #True
+  
+ a = [1,2,3]
+ b = [1,2,3]
+ a == b #True
+ a is b #Flase, they are different objects 
+ c = b
+ b is c #True, b and c are pointing to the same stuff
+ 
+ a = 13
+ b = 13
+ a == b #True
+ a is b #True
  
