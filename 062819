@@ -24,7 +24,7 @@ msg2 = "he said 'hello there !'"  --- good
 msg3 = 'he said "hello there !"'  --- good
 
 5.escape sequence
-str = "he said \"ha ha\""  --- good
+str_sth = "he said \"ha ha\""  --- good #str is never a good variable name, which you could..
 
 
 6. string concateration
@@ -72,3 +72,7 @@ deci = 12.213
 interger = int(deci) #12
 my_list = [1,2,3]
 my_list_as_string = string(my_list) # "[1,2,3]"
+
+1/3 ----0.3333
+int(99.99) #99 only truncate not around
+4/2 ----2.0
