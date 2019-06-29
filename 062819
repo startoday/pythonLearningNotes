@@ -56,5 +56,19 @@ last = "Steele"
 formatted = "First Name: {}, Last Name: {}". format(first, last) #可以直接在string 后加
 
 
+8. every stirng is indexed, started with 0
+"lol"[0]  #l
+name = "Chuck"
+name[5] # error! max index is 4 ; not counting '\0' (if there is one in python)
+name[-1] #k
+name[-2] #c 倒着数的嗷
 
 
+9. convert data types
+in string interpolation, data type are implicitly converted into string form
+you can explicitly convert type by var2 = type (var1)
+
+deci = 12.213
+interger = int(deci) #12
+my_list = [1,2,3]
+my_list_as_string = string(my_list) # "[1,2,3]"
