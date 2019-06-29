@@ -29,7 +29,10 @@ if animal:   #没有input时自动不会做这些
   "A" < "a" # yep
   
   logical operators:
-  and, or, not
+  and, or(binary), not(unary)
   
   age > 2 and age < 8
+  if not isWeekend():
+    do th
   
+ 
