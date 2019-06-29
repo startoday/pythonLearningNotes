@@ -79,3 +79,12 @@ int(99.99) #99 only truncate not around
 
 round(thing to round, how many decimal points)
 
+
+10.for input function, 不会自动换行
+data = input("what is your name?")  # what is your name?your_input (also no space!)
+print("You said" +data) 
+
+#onther way looks nicer
+print("what is your name?")
+data = input()  # what is your name? -another line- your_input
+print("You said" +data) 
