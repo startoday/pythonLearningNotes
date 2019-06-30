@@ -35,6 +35,12 @@ if animal:   #没有input时自动不会做这些
   if not isWeekend():
     do th
   
+ if not x or y: #先判断not X， 再看 or
+    do th
+  
+  
+  
+  
 3.is vs ==
 is check with the memory and == checks value
 is--checking equality
