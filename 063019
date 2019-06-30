@@ -39,4 +39,6 @@ while num < 11:
   num += 1
   print(num)
 
+4.break
+to exit out of a loop immediatly 
 
