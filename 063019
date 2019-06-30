@@ -45,3 +45,8 @@ to exit out of a loop immediatly
 5. style for python: 
 PEP8(style Guide for python code!)
 autopep 8 --inplace ugly_code.py (need to install the package)
+
+
+6. List! 
+just a collection of grouping of items, which is a data structure
+
