@@ -42,3 +42,6 @@ while num < 11:
 4.break
 to exit out of a loop immediatly 
 
+5. style for python: 
+PEP8(style Guide for python code!)
+autopep 8 --inplace ugly_code.py (need to install the package)
