@@ -163,3 +163,12 @@ color = ["pink" , "yellow"]
 color[0],color[1] = color[1], color[0]
 print(color) #['yellow', 'pink']
 
+10.list comperhesion
+#[___for ___ in ___] ---output another list(list! if input is a string, still give you list)
+
+nums = [1,2,3]
+tenthNums = [x *10 for x in nums]
+print(tenthNums)#[10, 20, 30]
+name = "lee"
+up_name = [char.upper() for char in name]
+print(up_name) #['L', 'E', 'E']
