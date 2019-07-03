@@ -22,3 +22,40 @@ print(friends[-1) # AZ negative value also work! 倒着数！，-1和0是一样�
  
  
  code people[-1][0]=="A"  not working, because in Python, strings are immutable;Basically, an object that is immutable cannot be modified once it is created unlike lists which are "mutable". 
+
+3. iterate through a list
+#for loop, while loop
+nums = [1,2,3,True,8.15]
+for num in nums
+  print(num)
+ 
+OR
+
+nums = [1,2,3,True,8.15]
+i = 0
+while i < len(nums):
+  print(nums[i])
+  i += 1   #python 里没有i++！！
+  
+4. List Method
+(method is not the same thing as function, method is the one needs object to use?)
+data = [1,2,3]
+data.append("purple) # append can only add ONE element to the end
+
+use extend to add more elements to the end of list 
+list1 = [1,2,3,4]
+list1.append([5,6]) #list1: [1,2,3,4,[5,6]]
+list1.extend([5,6]) #list1:[1,2,3,4,5,6]
+
+more example:
+#注意这个例子里的list2 是list1里面的浅拷贝，所以改变list2的时候list1也变了！
+list1 = [1,2,3,4]
+list2 = list1
+list1.append([5,6]) #list1: [1, 2, 3, 4, [5, 6]]
+print(list1)  
+list2.extend([5,6]) 
+print(list2) #list2:[1, 2, 3, 4, [5, 6], 5, 6]
+print(list1) #list1:[1, 2, 3, 4, [5, 6], 5, 6]
+
+# list2.extend(7,8) #extend only take one argument as append
+# print(list2)
