@@ -1,0 +1,24 @@
+1.list
+[] tells python it is a list, seperate by ","
+it can contain any type in the same list
+
+demo_list = ["a", 1, 45.7, True]  #no error!
+
+use len funtion to check how many item is in the list
+
+len(demo_list) #4
+
+#another way to build a list -- list() function
+tasks = list(range(1,4))
+
+2.access value in list
+list always start counting at zero
+friends = ["AZ", "Dood"]
+print(friends[0]) # AZ
+print(friends[3]) # error, list index out of range
+print(friends[-1) # AZ negative value also work! 倒着数！，-1和0是一样的
+>>> "Az" in friends
+# True 可以check是不是在list里
+ 
+ 
+ code people[-1][0]=="A"  not working, because in Python, strings are immutable;Basically, an object that is immutable cannot be modified once it is created unlike lists which are "mutable". 
