@@ -148,3 +148,18 @@ list11 = list7[2::-1]
 print(list11) # [3, 2，1] 从 index是1开始，倒着数到boundary
 list12 = list7[:1:-1] 
 print(list12) # [6, 5, 4, 3] 倒着数到不包括index是1的那些
+
+
+8.tricks with slices
+-reverse list/strings #don't forget this way give you a copy, but the reverse() is in-place
+reverse string:  string[::-1]
+numbers = [1,2,3,4,5]
+numbers[1:3] = ["a","bac"]
+print(numbers) #[1, 'a', 'bac', 4, 5] #list is muatable in python
+
+
+9.swap value with comma syntax (for shuffling/sorting/algorithm)
+color = ["pink" , "yellow"]
+color[0],color[1] = color[1], color[0]
+print(color) #['yellow', 'pink']
+
