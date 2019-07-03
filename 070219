@@ -110,3 +110,27 @@ words = ["today", "is", "good!"]
 name = ["Mr", "Lee"]
 res = ".".join(name) 
 print(res) # Mr.Lee
+
+
+
+7. slicing!
+#give me a part of list!
+#make new lists using slices of the old list!
+some_list[start: end: step]
+#start: where want it to begin ---will need at least one :! to show it is slice 
+list3 = list1[1:] # starts from 1 ['hi', 8, 4]
+print(list3)
+
+list4 = list1[-3:] # starts from -3 ['hi', 8, 4]
+print(list4)
+list1[0:] #give you a copy of the list, but not the same origin one! unique copy, own address!
+
+
+# the end index is exclusive! the end is not included
+list5 = list1[1:3] # starts from 1, end at 2 ['hi', 8]
+print(list5)
+
+#if negative nums, is item to exclude from the end
+list6 = list1[1:-1] # starts from 1 end at 2['hi', 8]
+print(list6)
+
