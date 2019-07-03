@@ -197,3 +197,9 @@ without_vows2 = "".join([chars for chars in with_vows if chars not in "aeiou"]) 
 print(without_vows2) #Ths s s mch fn!
 
 print("......".join(["hi", "?"])) #hi......?
+
+
+
+answer = [num for num in [1,2,3,4] if num in [3,4,5,6]]  #num needs to be in both list
+
+answer2 = [name[::-1].lower() for name in ["Elie", "Tim", "Matt"]]  # get the lower case and reverse it 
