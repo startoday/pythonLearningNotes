@@ -37,12 +37,12 @@ while i < len(nums):
   print(nums[i])
   i += 1   #python 里没有i++！！
   
-4. List Method
+4. List Method - add stuff
 (method is not the same thing as function, method is the one needs object to use?)
 data = [1,2,3]
-data.append("purple) # append can only add ONE element to the end
+----data.append("purple) # append can only add ONE element to the end
 
-use extend to add more elements to the end of list 
+----use extend to add more elements to the end of list 
 list1 = [1,2,3,4]
 list1.append([5,6]) #list1: [1,2,3,4,[5,6]]
 list1.extend([5,6]) #list1:[1,2,3,4,5,6]
@@ -59,3 +59,54 @@ print(list1) #list1:[1, 2, 3, 4, [5, 6], 5, 6]
 
 # list2.extend(7,8) #extend only take one argument as append
 # print(list2)
+
+----insert（the pos you want to insert, val to insert）
+eg:
+list1 = [1,2,3,4]
+list1.insert(3,8) #list1: [1, 2, 3, 8, 4]
+print(list1)  
+list1.insert(-2, "hi") 
+print(list1) #还是在该index处（前）插入 --list1:[[1, 2, 3, "hi",8, 4]---calculate the position based on old array
+list1.insert(len(list1), "last")
+print(list1) #list1:[1, 2, 3, "hi",8, 4, "last"]
+
+
+5. list method -remove stuff
+stuff_list.clear()  #delete everything (became an empty list)
+
+pop() #remove the item at the given position in the list and return it
+#if no index is specified, removes and returns last item in the list
+
+
+list1.pop()  # "last"
+list1.pop(1)  # 2
+print(list1)  #[1, 3, 'hi', 8, 4]
+
+
+remove #move the first value found and give a error if not found
+
+list1.remove(1)  
+print(list1)  #[3, 'hi', 8, 4]
+
+
+6. list method
+index() #return the index of the specified item in the list
+#can specify start and end, check start from start (val, start_index, end_index)
+
+count() # how many it shows in the list
+#if not will be 0
+
+reverse()
+#IN PLACE! reverse the elements of the list  - update your origin list
+
+sort()
+#IN-PLACE！ asending order
+
+join()
+#actually a string method, not a list method --- always used with strings and lists
+words = ["today", "is", "good!"]
+" ".join(words) #will put a space in every one of the list element --- "today is good!"
+#result is also a string
+name = ["Mr", "Lee"]
+res = ".".join(name) 
+print(res) # Mr.Lee
