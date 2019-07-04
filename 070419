@@ -110,3 +110,10 @@ answer = { (stuff[0]: stuff[1] )for stuff in person}
 answer = {stuff[0]: stuff[1] for stuff in person}
 answer = dict(person)
 answer = {k:v for k, v in person}
+
+C.
+answer = {k : 0 for k in "aeiou"}
+answer = dict.fromkeys("aeiou", 0)
+
+D. ASCII codes dictionary
+answer = {k:chr(k) for k in range(65,91)}
