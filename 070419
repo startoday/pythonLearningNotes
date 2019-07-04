@@ -85,3 +85,28 @@ print({num: ("even" if num % 2 == 0 else "odd") for num in num_list})
 yelling_ins2 = {(k.upper() if k is "color" else k):v.upper() for k,v in ins.items() }
 print(yelling_ins2)  
 #{'name': 'COLT', 'city': 'SEATTLE', 'COLOR': 'PURPLE'}
+
+
+5.dictionary exercise 
+A. Using a dictionary comprehension:
+list1 = ["CA", "NJ", "RI"]
+list2 = ["California", "New Jersey", "Rhode Island"]
+ 
+answer = {list1[i]: list2[i] for i in range(0,3)}
+
+The "advanced" solution with zip() 
+
+list1 = ["CA", "NJ", "RI"]
+list2 = ["California", "New Jersey", "Rhode Island"]
+ 
+dict(zip(list1,list2))  
+
+B.person = [["name", "Jared"], ["job", "Musician"], ["city", "Bern"]]
+
+# use the person variable in your answer
+#wrong answer! 不要随便加括号
+answer = { (stuff[0]: stuff[1] )for stuff in person} 
+#right answer
+answer = {stuff[0]: stuff[1] for stuff in person}
+answer = dict(person)
+answer = {k:v for k, v in person}
