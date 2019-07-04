@@ -84,3 +84,4 @@ print(cat.get("name"))  #lilu
 print(cat.get("agessss"))  #None --vs in/ [] F or error
 
 
+ 
