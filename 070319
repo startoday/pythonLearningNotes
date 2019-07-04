@@ -44,3 +44,43 @@ for key, val in cat.items():
   
 #注意python里面 indent重要，空格可能没事 
 
+3. test if the dictionary have a key  -- in key word -- only for the key
+"name" in cat # True
+
+#test val: 
+"lilu" in cat.values() # True
+
+
+4.  dictionary methods
+clear() # clean the whole dic, give you an empty dictionary
+
+copy() # makes a copy of a dictionary
+ca = cat.copy()
+print(ca)  # {'name': 'lilu', 'age': 4}
+print(ca is cat) #False 
+print(ca == cat) #True
+
+
+fromkeys() # create key-value pairs from comma separated values
+{}.fromkeys("a", [1,2,3,4,5])
+{}.fromkeys(["email"], 'unknown')
+
+#useful for assign a bunch of things together, creayte default dicts
+user_new = {}.fromkeys(['name','score','email','bio'], "unknown")
+print(user_new)  # {'name': 'unknown', 'score': 'unknown', 'email': 'unknown', 'bio': 'unknown'}
+
+another_user = {}.fromkeys("name", "unknown") #注意第一个参数是按照list这么传递的
+print(another_user) # {'n': 'unknown', 'a': 'unknown', 'm': 'unknown', 'e': 'unknown'}
+another_user2 = {}.fromkeys(["name"], "unknown") #这才是想要的
+print(another_user2) # {'name': 'unknown'}
+another_user3 = {}.fromkeys("name")  #只穿一个参数的时候设置为None
+print(another_user3) # {'n': None, 'a': None, 'm': None, 'e': None}
+another_user4 = {}.fromkeys("name", "unknown", "what", "unknown") #error, max 2 arguments
+another_user5 = {}.fromkeys(range(1,5), "unknown")
+print(another_user5) # {1: 'unknown', 2: 'unknown', 3: 'unknown', 4: 'unknown'}
+
+get() # retrieves a key in an object and return None, instead of a Key error if the key doesn't exist
+print(cat.get("name"))  #lilu
+print(cat.get("agessss"))  #None --vs in/ [] F or error
+
+
