@@ -1,0 +1,9 @@
+1. pop in dictionary
+pop() #takes a single argument corresponding to a skey and removes that key-value pair from the dictionary
+#return the value corresponding to the key that was removed
+
+d = dict (a = 1, b = 2, c = 3)
+#d.pop() #error,expected at least 1 arguments
+print(d.pop('a')) #1
+print(d) #{'b': 2, 'c': 3}
+#d.pop(e) #KeyError, e not defined
