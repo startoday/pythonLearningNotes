@@ -1,4 +1,4 @@
-1. pop in dictionary
+1. pop(), popitem() in dictionary
 pop() #takes a single argument corresponding to a skey and removes that key-value pair from the dictionary
 #return the value corresponding to the key that was removed
 
@@ -7,3 +7,19 @@ d = dict (a = 1, b = 2, c = 3)
 print(d.pop('a')) #1
 print(d) #{'b': 2, 'c': 3}
 #d.pop(e) #KeyError, e not defined
+
+popitem() #removes a random key in a dictionary -- elements are stored unorderly in a dictionary
+f = dict (a = 1, b = 2, c = 3, d = 4, f =5)
+print(f.popitem()) #('f', 5)
+# print(f.popitem('b')) # error, popitem should take no argument
+print(f) # {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+update() # update keys and values in a dictionary with another set of key value pairs
+first = dict (a = 1, b = 2, c = 3, d = 4, f =5)
+second = {}
+second.update(first)
+print(second) # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+second['a'] = "haha"
+print(second) # {'a': 'haha', 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+second.update(first)
+print(second) # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5}
