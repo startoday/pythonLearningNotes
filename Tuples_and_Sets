@@ -1,7 +1,7 @@
 1. Tuple!
 an ordered collection or grouping of items
 --immutable!！ list is mutable!
-
+#tuple can have duplicates
 nums = (1,2,3,4)
 print(type(nums)) #<class 'tuple'>
 print(3 in nums) #True
@@ -25,3 +25,17 @@ print(3 in nums) #True
 tuple_num = tuple([1, 234, 5])
 print(tuple_num[0]) #1
 print(tuple_num[-2]) #234
+
+#use tuple as a key for dictionary
+radio = {(103.5) : "music radio",
+		 (117.4) : "news channel",
+		 (113,119): "random stuff"
+}
+print(radio) # {103.5: 'music radio', 117.4: 'news channel', (113, 119): 'random stuff'}
+print(radio[(103.5)]) #music radio
+print(radio[(113, 119)]) #random stuff
+print(radio[113, 119]) #random stuff
+
+## you can use a tuple as a key,  but can not use list as a key for dictionary
+
+radio2 = {[113,119]: "random stuff"} #error-- unhashable type: 'list'
