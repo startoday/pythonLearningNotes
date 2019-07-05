@@ -88,5 +88,11 @@ all, at, once = 5, 10, 15
 
 #you can always assign and reassign variables
 
+10. naming_conventions in python
 
+most variables should be lower case,
+CAPITAL_NAME usually is constants
+UpperCamelCase : refer to a class
+
+"dunder" for double underscore ***
 
