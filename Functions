@@ -38,3 +38,45 @@ def square_of_7():
 
 result = square_of_7()
 print(result)
+
+from random import random
+
+def filp_coin():
+	#random() generate random number 0 - 1 (no 1)
+	if(random() > 0.5):
+		return "heads"
+	else :
+		return "tails"
+
+#print(filp_coin())
+#if has the same function definination, it will overwrite and pick the bottom one 
+def filp_coin():
+	#random() generate random number 0 - 1 (no 1)
+	if(random() > 0.5):
+		return "HEADS"
+	else :
+		return "TAILS"
+
+print(filp_coin())
+
+#只有一个if条件时if需要在最后，这是为啥？。。 
+def generate_evens():
+    return [x for x in range(1,50) if x % 2 == 0 ]
+    
+ 4. function parameters
+ def square(num):
+	return num * num
+print(square(4))  #16
+
+def add(a,b):
+	return a + b
+print(add(2,3)) #5
+
+#it is better to make function parameter name meaningful
+
+#parameter vs arguments
+parameter is a variable in function defination
+argument is the actual value of this variable that gets passed to function
+
+
+ 
