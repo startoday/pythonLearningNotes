@@ -151,3 +151,20 @@ def exponent(num,power = 2):
 
 #double underscore!!!!
 print(exponent.__doc__)
+
+
+9.function exercise
+A.
+def last_element(para):
+    if(len(para) != 0):
+        return para[len(para)-1]
+    return None
+  
+#更简单的写法
+def last_element(l):
+    if l:
+        return l[-1]
+    return None
+  
+ 
+  
