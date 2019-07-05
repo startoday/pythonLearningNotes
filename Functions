@@ -170,5 +170,24 @@ B. is_pali?(空格和大小写freeB）
 def is_palindrome(string):
     stripped = string.replace(" ", "").upper()
     return stripped == stripped[::-1]
+
+C. 注意区别 for 和 list comprehension ，普通的for loop 没法把if写在一行
+def multiply_even_numbers(l):
+    res = 1
+    for i in l :
+        if (i % 2 == 0) :
+            res *= i
+    return res
+    
+ D.只大写首字母
+ def capitalize(string):
+    return string[0].upper()+string[1:]
  
-  
+E.注意区别bool和truthy
+def compact(l):
+    return[ k for k in l if k]
+#错误写法，只判断是不是等于True
+def compact(l):
+    return[ k for k in l if k == True]
+
+
