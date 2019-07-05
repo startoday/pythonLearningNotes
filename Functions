@@ -63,8 +63,8 @@ print(filp_coin())
 def generate_evens():
     return [x for x in range(1,50) if x % 2 == 0 ]
     
- 4. function parameters
- def square(num):
+4. function parameters
+def square(num):
 	return num * num
 print(square(4))  #16
 
@@ -77,6 +77,15 @@ print(add(2,3)) #5
 #parameter vs arguments
 parameter is a variable in function defination
 argument is the actual value of this variable that gets passed to function
+
+
+5.default parameters
+#give power a default value -- the thing happened to pop()
+def exponent(num,power = 2):
+	return num ** power
+
+print(exponent(2,3))
+print(exponent(3))  #9
 
 
  
