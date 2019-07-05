@@ -1,0 +1,39 @@
+1.Sets!
+(sets are like formal math sets)
+#sets DO NOT have duplicate values -
+#elements in sets aren't ordered
+#you access items in a set by index  --- NO ORDER!
+
+2.create and access
+{} (not a key: value)  / set function
+# can't use s[0]
+s = set({1,2,3,4,5,5,5,6})
+print(s) #{1, 2, 3, 4, 5, 6}
+
+s2 = {1,4,5,5, 'a' 'b', 234.5, 7/5} 
+# 注意和dic区别是没有key：value pair
+#注意上面的例子我在a，b之间忘记加 ，了，成为了一个合并的array
+
+print(s2) #{1, 'ab', 1.4, 4, 5, 234.5}
+print(type(s2)) #<class 'set'>
+
+print(4 in s) #True
+
+#还是可以loop through it
+for stuff in s2:
+	print(stuff)
+'''
+注意顺序是乱的，且是已经完成计算的
+1
+1.4
+4
+ab
+5
+234.5
+'''
+
+print(len(s)) #6 -- give you the number of unique items
+print(list(s)) # by this way you can convert a duplicate list to a de-dup list
+# ---list(set(cities))
+
+3.set methods
