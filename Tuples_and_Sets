@@ -11,3 +11,17 @@ print(3 in nums) #True
 --tuples are faster than lists  -- such as months in a year
 --it makes your code safer
 --valid keys in a dictionary --- .items() return a tuple to you
+
+3.create and access
+#use () or the tuple function
+#access stuff just like a list
+
+nums = (1,2,3,4)
+print(type(nums)) #<class 'tuple'>
+print(3 in nums) #True
+# nums[0] = "change!"  #error 'tuple' object does not support item assignment
+
+#use a tuple function, which take only one argument(a list) and convert it to a tuple
+tuple_num = tuple([1, 234, 5])
+print(tuple_num[0]) #1
+print(tuple_num[-2]) #234
