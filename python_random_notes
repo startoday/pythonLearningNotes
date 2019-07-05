@@ -1,0 +1,32 @@
+1.variables must stary with a letter or underscore_
+  CASE sensitive!!
+
+2. ** power
+   % remainder
+   /  不是整数除法，就是正常的除 （in python 3） python2 和 c++一样还是整数除法
+1+1.0 // 2.0 auto do the float convert for you 
+
+
+// --- Interger Division
+5//3   #1
+10//3  #3 (always round down)
+
+
+1/2   #0.5 python always get float
+
+2**3  #8
+
+49**0.5 #7
+
+13%2  #1
+
+
+   
+
+ 
+6. use # for comments in python
+''' for python  multiple line comments
+
+7. python use indent to distinguish block, which is 4 spaces, it is better to use space than tab, to avoid difference between different editors
+
+8. python 里的print（） 有自动换行功效
