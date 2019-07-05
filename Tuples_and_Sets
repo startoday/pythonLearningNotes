@@ -1,0 +1,13 @@
+1. Tuple!
+an ordered collection or grouping of items
+--immutable!！ list is mutable!
+
+nums = (1,2,3,4)
+print(type(nums)) #<class 'tuple'>
+print(3 in nums) #True
+# nums[0] = "change!"  #error 'tuple' object does not support item assignment
+
+2.why use a tuple?
+--tuples are faster than lists  -- such as months in a year
+--it makes your code safer
+--valid keys in a dictionary --- .items() return a tuple to you
