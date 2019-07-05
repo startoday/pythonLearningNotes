@@ -1,0 +1,232 @@
+# List! 
+just a collection of grouping of items, which is a data structure
+
+1.list
+[] tells python it is a list, seperate by ","
+it can contain any type in the same list
+
+demo_list = ["a", 1, 45.7, True]  #no error!
+
+use len funtion to check how many item is in the list
+
+len(demo_list) #4
+
+#another way to build a list -- list() function
+tasks = list(range(1,4))
+
+2.access value in list
+list always start counting at zero
+friends = ["AZ", "Dood"]
+print(friends[0]) # AZ
+print(friends[3]) # error, list index out of range
+print(friends[-1) # AZ negative value also work! 倒着数！，-1和0是一样的
+>>> "Az" in friends
+# True 可以check是不是在list里
+ 
+ 
+ code people[-1][0]=="A"  not working, because in Python, strings are immutable;Basically, an object that is immutable cannot be modified once it is created unlike lists which are "mutable". 
+
+3. iterate through a list
+#for loop, while loop
+nums = [1,2,3,True,8.15]
+for num in nums
+  print(num)
+ 
+OR
+
+nums = [1,2,3,True,8.15]
+i = 0
+while i < len(nums):
+  print(nums[i])
+  i += 1   #python 里没有i++！！
+  
+4. List Method - add stuff
+(method is not the same thing as function, method is the one needs object to use?)
+data = [1,2,3]
+----data.append("purple) # append can only add ONE element to the end
+
+----use extend to add more elements to the end of list 
+list1 = [1,2,3,4]
+list1.append([5,6]) #list1: [1,2,3,4,[5,6]]
+list1.extend([5,6]) #list1:[1,2,3,4,5,6]
+
+more example:
+#注意这个例子里的list2 是list1里面的浅拷贝，所以改变list2的时候list1也变了！
+list1 = [1,2,3,4]
+list2 = list1
+list1.append([5,6]) #list1: [1, 2, 3, 4, [5, 6]]
+print(list1)  
+list2.extend([5,6]) 
+print(list2) #list2:[1, 2, 3, 4, [5, 6], 5, 6]
+print(list1) #list1:[1, 2, 3, 4, [5, 6], 5, 6]
+
+# list2.extend(7,8) #extend only take one argument as append
+# print(list2)
+
+----insert（the pos you want to insert, val to insert）
+eg:
+list1 = [1,2,3,4]
+list1.insert(3,8) #list1: [1, 2, 3, 8, 4]
+print(list1)  
+list1.insert(-2, "hi") 
+print(list1) #还是在该index处（前）插入 --list1:[[1, 2, 3, "hi",8, 4]---calculate the position based on old array
+list1.insert(len(list1), "last")
+print(list1) #list1:[1, 2, 3, "hi",8, 4, "last"]
+
+
+5. list method -remove stuff
+stuff_list.clear()  #delete everything (became an empty list)
+
+pop() #remove the item at the given position in the list and return it
+#if no index is specified, removes and returns last item in the list
+
+
+list1.pop()  # "last"
+list1.pop(1)  # 2
+print(list1)  #[1, 3, 'hi', 8, 4]
+
+
+remove #move the first value found and give a error if not found
+
+list1.remove(1)  
+print(list1)  #[3, 'hi', 8, 4]
+
+
+6. list method
+index() #return the index of the specified item in the list
+#can specify start and end, check start from start (val, start_index, end_index)
+
+count() # how many it shows in the list
+#if not will be 0
+
+reverse()
+#IN PLACE! reverse the elements of the list  - update your origin list
+
+sort()
+#IN-PLACE！ asending order
+
+join()
+#actually a string method, not a list method --- always used with strings and lists
+words = ["today", "is", "good!"]
+" ".join(words) #will put a space in every one of the list element --- "today is good!"
+#result is also a string
+name = ["Mr", "Lee"]
+res = ".".join(name) 
+print(res) # Mr.Lee
+
+
+
+7. slicing!
+#give me a part of list!
+#make new lists using slices of the old list!
+some_list[start: end: step]
+#start: where want it to begin ---will need at least one :! to show it is slice 
+list3 = list1[1:] # starts from 1 ['hi', 8, 4]
+print(list3)
+
+list4 = list1[-3:] # starts from -3 ['hi', 8, 4]
+print(list4)
+list1[0:] #give you a copy of the list, but not the same origin one! unique copy, own address!
+
+
+# the end index is exclusive! the end is not included
+list5 = list1[1:3] # starts from 1, end at 2 ['hi', 8]
+print(list5)
+
+#if negative nums, is item to exclude from the end
+list6 = list1[1:-1] # starts from 1 end at 2['hi', 8]
+print(list6)
+
+#step: similar as step with range
+list7 = [1,2,3,4,5,6]
+list8 = list7[::2]
+print(list8) #[1, 3, 5] --start from the beginning
+list9 = list7[1::2] 
+print(list9) #[2, 4, 6] --start at index 1
+
+#with negative numbers, reverse the order
+list10 = list7[1::-1]
+print(list10) #  [2, 1] 从 index是1开始，倒着数到boundary
+list11 = list7[2::-1]  
+print(list11) # [3, 2，1] 从 index是1开始，倒着数到boundary
+list12 = list7[:1:-1] 
+print(list12) # [6, 5, 4, 3] 倒着数到不包括index是1的那些
+
+
+8.tricks with slices
+-reverse list/strings #don't forget this way give you a copy, but the reverse() is in-place
+reverse string:  string[::-1]
+numbers = [1,2,3,4,5]
+numbers[1:3] = ["a","bac"]
+print(numbers) #[1, 'a', 'bac', 4, 5] #list is muatable in python
+
+
+9.swap value with comma syntax (for shuffling/sorting/algorithm)
+color = ["pink" , "yellow"]
+color[0],color[1] = color[1], color[0]
+print(color) #['yellow', 'pink']
+
+10.list comperhesion
+#[___for ___ in ___] ---output another list(list! even if input is a string, still give you list)
+
+nums = [1,2,3]
+tenthNums = [x *10 for x in nums]
+print(tenthNums)#[10, 20, 30]
+name = "lee"
+up_name = [char.upper() for char in name]
+print(up_name) #['L', 'E', 'E']
+
+truth = [bool(val) for val in [0,[],'',1]]
+print(truth) #[False, False, False, True]
+
+#convert a list of nums to a list of strings
+string_list = [str(num) for num in nums]
+print(string_list) #['1', '2', '3']
+
+numbers = [1,2,3,4,5,6]
+evens = [num for num in numbers if num % 2 == 0]
+odds = [num for num in numbers if num % 2 != 0]
+print(evens) #[2, 4, 6]
+print(odds) #[1, 3, 5]
+manip = [num *2 if num % 2 == 0 else num/2 for num in numbers]
+print(manip)
+
+#a good one!
+
+with_vows = "This is so much fun!"
+without_vows = "|".join([chars for chars in with_vows if chars not in "aeiou"]) #remember, join() return a string 
+print(without_vows) #T|h|s| |s| |s| |m|c|h| |f|n|!
+without_vows2 = "".join([chars for chars in with_vows if chars not in "aeiou"]) #remember, join() return a string 
+print(without_vows2) #Ths s s mch fn!
+
+print("......".join(["hi", "?"])) #hi......?
+
+
+
+answer = [num for num in [1,2,3,4] if num in [3,4,5,6]]  #num needs to be in both list
+
+answer2 = [name[::-1].lower() for name in ["Elie", "Tim", "Matt"]]  # get the lower case and reverse it 
+
+answer =  [num for num in range(1,101) if num % 12 == 0] #get all numbers in 1-100 which is divisible by 12
+
+answer = [chars for chars in "amazing" if chars not in "aeiou"] #kick out vowels!
+
+
+11.nested list -- for matricies
+nested_list = [[1,2,3],[4,5,6],[7,8,9]]
+#access it
+nested_list[0][1] #2
+nested_list[-1][-2] #8
+
+#have to use nested loops to iterate elements
+for va in nested_list:
+  for val in va:
+    print(val)
+    
+#nested list comprehension    
+[[print(val) for val in va] for va in nested_list]
+    
+board = [[num for num in range(1,4)] for val in range(1,4)]
+print(board) #[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+start_up = [["x" if num % 2 != 0 else "o" for num in range(1,4)] for val in board] # 前一个[]的就是val了，不需要declare
+print(start_up) #[['x', 'o', 'x'], ['x', 'o', 'x'], ['x', 'o', 'x']]
