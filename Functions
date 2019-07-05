@@ -110,3 +110,37 @@ print(exponent(power=2, num=5)) #25
 #more expilicit, a little more flexibility 
 #it is useful when passing a dictionary to a function and unpacking it's values
 #注意与 default para 区别
+
+
+
+7.scope
+#where the variables can be accessed
+
+-variable created in functions are scoped in that function! --only avaiable in that function
+
+-global not in a function
+total = 0
+def increment():
+	total += 1
+	return total
+increment() #ERROR! local variable 'total' referenced before assignment
+#it expect a local variable
+
+total = 0
+def increment():
+	global total #this key word will work
+	total += 1
+	return total
+print(increment()) # 1
+print(increment()) # 2
+
+--nonlocal #let us modify a parent's variables in a child(AKA nested) function
+def outer():
+	count = 0  #since count is not a gobal variable
+	def inner():
+		nonlocal count
+		count += 1
+		return count
+	return inner()
+
+
