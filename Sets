@@ -58,3 +58,15 @@ s.discard(6)
 print(s) #{1, 2, 3, 4, 5} can also delete
 s.discard(8)
 print(s) #{1, 2, 3, 4, 5} no error reported
+
+clear() : # remove all the contents of the set
+
+another_s.clear()
+print(another_s) #set()
+print(type(another_s)) #<class 'set'>
+
+4.copy() creates a copy of the set, a new one!
+another_s = s.copy()
+print(another_s) #{1, 2, 3, 4, 5}
+print(another_s is s) #False
+print(another_s == s) #True
