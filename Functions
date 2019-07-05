@@ -144,3 +144,10 @@ def outer():
 	return inner()
 
 
+8. it is better to write docs for function by using ''' in a function and use function.__doc__ (are dounle underscores) to access it
+def exponent(num,power = 2):
+	'''A simple function to calculate exps, the second para is power, default as 2'''
+	return num ** power
+
+#double underscore!!!!
+print(exponent.__doc__)
