@@ -1,0 +1,204 @@
+1.dictionary!
+#limitations of lists: not enough information
+#dictionary is a data strcuture that consists of key value pairs.
+#we use the keys to describe our data and the values to represent the data
+
+in dictionary, key and values are separated by a colon, and each pair is separated with comma
+iron_man = {
+   "name" : "Tony stack",
+   "wife" : "pepper",
+   "daughter" : "morgan"
+}   
+#keys are almost always numbers and strings
+#another way to initialze a dictionary: dict(): assign values to keys with  "="
+
+another_dic = dict(key = "value") #dict can pass more than one pair
+print(another_dic)  #{'key': 'value'}
+cat = dict(name = "lilu", age = 4)
+print(cat) #{'name': 'lilu', 'age': 4}
+
+2.accessing data 
+cat["name"] #"lilu" --error if not exit   #注意括号里面一定有引号，不是直接variable name
+
+#iterate the dic
+#access all values in a dictionary: .values()
+#use .key() to get the keys, also able for iteratre; no garuantee for order
+
+for val in cat.values():
+  print(val);  #lilu &&&  4 (another line)
+  
+#accessing all keys and values -- .items()
+
+print(cat.items())  # dict_items([('name', 'lilu'), ('age', 4)])
+#return a loopable structure
+
+for key, val in cat.items():
+  print(key,val)
+  print(f"key is {key} and value is {val}")
+  
+  #res : 
+  name lilu
+  key is name and value is lilu
+  age 4
+  key is age and value is 4
+  
+#注意python里面 indent重要，空格可能没事 
+
+3. test if the dictionary have a key  -- in key word -- only for the key
+"name" in cat # True
+
+#test val: 
+"lilu" in cat.values() # True
+
+
+4.  dictionary methods
+clear() # clean the whole dic, give you an empty dictionary
+
+copy() # makes a copy of a dictionary
+ca = cat.copy()
+print(ca)  # {'name': 'lilu', 'age': 4}
+print(ca is cat) #False 
+print(ca == cat) #True
+
+
+fromkeys() # create key-value pairs from comma separated values
+{}.fromkeys("a", [1,2,3,4,5])
+{}.fromkeys(["email"], 'unknown')
+
+#useful for assign a bunch of things together, creayte default dicts
+user_new = {}.fromkeys(['name','score','email','bio'], "unknown")
+print(user_new)  # {'name': 'unknown', 'score': 'unknown', 'email': 'unknown', 'bio': 'unknown'}
+
+another_user = {}.fromkeys("name", "unknown") #注意第一个参数是按照list这么传递的
+print(another_user) # {'n': 'unknown', 'a': 'unknown', 'm': 'unknown', 'e': 'unknown'}
+another_user2 = {}.fromkeys(["name"], "unknown") #这才是想要的
+print(another_user2) # {'name': 'unknown'}
+another_user3 = {}.fromkeys("name")  #只穿一个参数的时候设置为None
+print(another_user3) # {'n': None, 'a': None, 'm': None, 'e': None}
+another_user4 = {}.fromkeys("name", "unknown", "what", "unknown") #error, max 2 arguments
+another_user5 = {}.fromkeys(range(1,5), "unknown")
+print(another_user5) # {1: 'unknown', 2: 'unknown', 3: 'unknown', 4: 'unknown'}
+
+get() # retrieves a key in an object and return None, instead of a Key error if the key doesn't exist
+print(cat.get("name"))  #lilu
+print(cat.get("agessss"))  #None --vs in/ [] F or error
+
+5. pop(), popitem() in dictionary
+pop() #takes a single argument corresponding to a skey and removes that key-value pair from the dictionary
+#return the value corresponding to the key that was removed
+
+d = dict (a = 1, b = 2, c = 3)
+#d.pop() #error,expected at least 1 arguments
+print(d.pop('a')) #1
+print(d) #{'b': 2, 'c': 3}
+#d.pop(e) #KeyError, e not defined
+
+popitem() #removes a random key in a dictionary -- elements are stored unorderly in a dictionary
+f = dict (a = 1, b = 2, c = 3, d = 4, f =5)
+print(f.popitem()) #('f', 5)
+# print(f.popitem('b')) # error, popitem should take no argument
+print(f) # {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+update() # update keys and values in a dictionary with another set of key value pairs
+#it should takes a dictionary to make it work
+first = dict (a = 1, b = 2, c = 3, d = 4, f =5)
+second = {}
+second.update(first)
+print(second) # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+second['a'] = "haha"
+print(second) # {'a': 'haha', 'b': 2, 'c': 3, 'd': 4, 'f': 5}
+first.popitem()
+print(first) # {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+second.update(first)
+print(second) # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'f': 5} #will overwrite the same item, but will not remove things
+ 
+6. for add pairs, can just use[]
+# Make a copy of inventory and save it to a variable called stock_list
+stock_list = inventory.copy()
+# add the value 18 to stock_list under the key "cookie"
+stock_list['cookie'] = 18
+
+
+7. data modeling
+#eg of a song play list
+playlist = {
+	"title" : "papaya",
+	"author" : "colt",
+	"songs" : [
+		{"title" : "song1", "artist" : ["bule"], "duration" : 2.5},
+		{"title" : "song2", "artist" : ["genee","djcat"], "duration" : 3.1},
+		{"title" : "meo", "artist" : ["pgtwo"], "duration" : 3.7}
+	]
+}
+
+for song in playlist["songs"]:
+	 print(song["title"])
+
+total_length = 0
+
+for time in playlist["songs"]:
+	 total_length += time["duration"]
+print(total_length)
+
+8. dictionary comprehension
+#syntax : { ____ : ___ for ____ in ____}
+--iterates over keys by default
+--to iterate over keys adn values: using .items()
+
+#return a dictionary
+numbers = dict(first = 1, second = 2, third = 3)
+squared_numbers = {key: val ** 2 for key, val in numbers.items()}
+print(squared_numbers) #{'first': 1, 'second': 4, 'third': 9}
+
+print({num : num/2 for num in range(1,10)})  #return a dictionary
+#{1: 0.5, 2: 1.0, 3: 1.5, 4: 2.0, 5: 2.5, 6: 3.0, 7: 3.5, 8: 4.0, 9: 4.5}
+
+str1 = "ABC"
+str2 = "789"
+combo = {str1[i] : str2[i] for i in range(0, len(str1))}
+print(combo) #{'A': '7', 'B': '8', 'C': '9'}
+
+ins = {"name" : "colt", "city" : "seattle", "color" : "purple"}
+yelling_ins = {k.upper():v.upper() for k,v in ins.items() }
+print(yelling_ins)  #{'NAME': 'COLT', 'CITY': 'SEATTLE', 'COLOR': 'PURPLE'}
+
+--condition logic
+num_list =[1, 2, 3, 4]
+print({num: ("even" if num % 2 == 0 else "odd") for num in num_list})
+#{1: 'odd', 2: 'even', 3: 'odd', 4: 'even'}
+
+yelling_ins2 = {(k.upper() if k is "color" else k):v.upper() for k,v in ins.items() }
+print(yelling_ins2)  
+#{'name': 'COLT', 'city': 'SEATTLE', 'COLOR': 'PURPLE'}
+
+
+9.dictionary exercise 
+A. Using a dictionary comprehension:
+list1 = ["CA", "NJ", "RI"]
+list2 = ["California", "New Jersey", "Rhode Island"]
+ 
+answer = {list1[i]: list2[i] for i in range(0,3)}
+
+The "advanced" solution with zip() 
+
+list1 = ["CA", "NJ", "RI"]
+list2 = ["California", "New Jersey", "Rhode Island"]
+ 
+dict(zip(list1,list2))  
+
+B.person = [["name", "Jared"], ["job", "Musician"], ["city", "Bern"]]
+
+# use the person variable in your answer
+#wrong answer! 不要随便加括号
+answer = { (stuff[0]: stuff[1] )for stuff in person} 
+#right answer
+answer = {stuff[0]: stuff[1] for stuff in person}
+answer = dict(person)
+answer = {k:v for k, v in person}
+
+C.
+answer = {k : 0 for k in "aeiou"}
+answer = dict.fromkeys("aeiou", 0)
+
+D. ASCII codes dictionary
+answer = {k:chr(k) for k in range(65,91)}
