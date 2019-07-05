@@ -37,3 +37,24 @@ print(list(s)) # by this way you can convert a duplicate list to a de-dup list
 # ---list(set(cities))
 
 3.set methods
+add() # add an element to a set, if the element is already in the set, the set doesn't change
+
+s.add(7)
+print(s) #{1, 2, 3, 4, 5, 6, 7}
+s.add(1)
+print(s) #{1, 2, 3, 4, 5, 6, 7}
+#s.add(10,9) #TypeError: add() takes exactly one argument (2 given)
+
+
+remove(): # removes a value from the set-- returns a KeyError if the value is not found 
+
+s.remove(7)
+print(s) #{1, 2, 3, 4, 5, 6}
+#s.remove(100) # KeyError: 100
+
+#use .discard() to avoid KeyErrors
+
+s.discard(6)
+print(s) #{1, 2, 3, 4, 5} can also delete
+s.discard(8)
+print(s) #{1, 2, 3, 4, 5} no error reported
