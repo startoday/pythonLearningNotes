@@ -1,0 +1,19 @@
+1.what is a function?
+- a process for executing a task, reusable
+- useful for re-act similar stuff
+
+#stay DRY - Don't Repeat Yourself!
+(WET - write everything twice)
+
+#*Abstract away* code for other users
+
+2.function structure
+def name_of_function():
+  #block of runnable code
+ 
+def say_hi():
+	print("what is your name?")
+	name = input()
+	print(f"hi,  {name}")
+
+say_hi()
