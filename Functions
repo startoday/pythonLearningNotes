@@ -17,3 +17,24 @@ def say_hi():
 	print(f"hi,  {name}")
 
 say_hi()
+
+def sing_happy_birthday():
+	print("Happy birthday to you")
+	print("Happy birthday to you")
+	print("Happy birthday dear you")
+	print("Happy birthday to you")
+
+for i in range(2,4):
+	sing_happy_birthday()
+	
+	
+3. return value for functions
+#return will exit the function, anthing after return won't be touched
+#return will outputs whatever value is placed after the return keyword
+#return pops the function off of the call stack
+
+def square_of_7():
+	return 7**2
+
+result = square_of_7()
+print(result)
