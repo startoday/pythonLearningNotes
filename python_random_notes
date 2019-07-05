@@ -21,8 +21,48 @@
 13%2  #1
 
 
-   
+3. naming_conventions
 
+most variables should be lower case,
+CAPITAL_NAME usually is constants
+UpperCamelCase : refer to a class
+
+"dunder" for double underscore ***
+   
+4.string format
+interpolate  #插入
+f-strings (python 3.6+)
+x = 10 
+formatted = f"I told you {x} times!" #不可以忘了这个f！
+#you can also do math in the {}
+
+# in python 2 .format() --play ground only support it
+print("the {} is ).format(sth)
+
+
+first = "Colt"
+last = "Steele"
+
+formatted = "First Name: {}, Last Name: {}". format(first, last) #可以直接在string 后加
+
+5.is vs ==
+is check with the memory and == checks value
+is--checking equality
+ a = 1
+ a == 1 #True
+ a is 1 #True
+  
+ a = [1,2,3]
+ b = [1,2,3]
+ a == b #True
+ a is b #Flase, they are different objects 
+ c = b
+ b is c #True, b and c are pointing to the same stuff
+ 
+ a = 13
+ b = 13
+ a == b #True
+ a is b #True
  
 6. use # for comments in python
 ''' for python  multiple line comments
