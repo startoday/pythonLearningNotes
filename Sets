@@ -70,3 +70,11 @@ another_s = s.copy()
 print(another_s) #{1, 2, 3, 4, 5}
 print(another_s is s) #False
 print(another_s == s) #True
+
+
+5.set Math
+#union -- pipe
+print(math_students | biology_students) #{'Jane', 'Oliver', 'Matthew', 'Apa', 'Chard', 'Helen', 'Mesut', 'Pat', 'James'}
+
+#intersection  -- &
+print(math_students & biology_students) #{'Matthew', 'James'}
