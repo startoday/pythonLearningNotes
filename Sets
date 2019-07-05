@@ -78,3 +78,25 @@ print(math_students | biology_students) #{'Jane', 'Oliver', 'Matthew', 'Apa', 'C
 
 #intersection  -- &
 print(math_students & biology_students) #{'Matthew', 'James'}
+
+
+6.set Comrehension --also return a set
+print({ke ** 2 for ke in range(10)})
+#{0, 1, 64, 4, 36, 9, 16, 49, 81, 25} check there is no order of it 
+
+# if there is : then it will be a dict
+print({ke: ke ** 2 for ke in range(10)})
+#{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+print({char.upper() for char in "hellor"})
+#{'R', 'L', 'O', 'E', 'H'}
+
+def are_all_vowels_in_string(string):
+	return len({char for char in string if char in "aeiou"}) ==5
+
+string = "aeiouaaa"
+string2 = "sequoia"
+string3 = "saqw"
+print( are_all_vowels_in_string(string)) #True
+print( are_all_vowels_in_string(string2)) #True
+print( are_all_vowels_in_string(string3)) #False
