@@ -87,5 +87,26 @@ def exponent(num,power = 2):
 print(exponent(2,3))
 print(exponent(3))  #9
 
+# the default parameter can be anything, even other functions!
+eg : just the name of function, no() aftert name!
+def add(a,b):
+	return a + b
+def math(a,b,fn = add):
+	return fn(a,b)
 
+def substract(a,b):
+	return a - b
+
+print(math(2,3)) #5
+print(math(2,3,substract))  # -1
  
+#def math(fn = add, a,b) #error, default has to be at the end or 一路向下
+#因为python是按照顺序assign para 的
+
+
+6.keyword argument
+#can specify the argument -- only if we know the name of parameters
+print(exponent(power=2, num=5)) #25
+#more expilicit, a little more flexibility 
+#it is useful when passing a dictionary to a function and unpacking it's values
+#注意与 default para 区别
