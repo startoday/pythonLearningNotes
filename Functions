@@ -165,6 +165,10 @@ def last_element(l):
     if l:
         return l[-1]
     return None
-  
+ 
+B. is_pali?(空格和大小写freeB）
+def is_palindrome(string):
+    stripped = string.replace(" ", "").upper()
+    return stripped == stripped[::-1]
  
   
