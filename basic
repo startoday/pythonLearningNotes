@@ -229,9 +229,6 @@ if animal:   #没有input时自动不会做这些
  if not x or y: #先判断not X， 再看 or
     do th
   
-  
-  
-  
 23.is vs ==
 is check with the memory and == checks value
 is--checking equality
@@ -250,3 +247,53 @@ is--checking equality
  b = 13
  a == b #True
  a is b #True
+ 
+ 
+24. loop  
+-iterable objects
+[40,30,435]
+"hello'
+range(1,10) # generate 1-9 包左不包右
+
+for item in iterable_object:
+  do sth with item
+eg: 
+for char in "hello":
+  print(char *10)  #每个char 会print 10 次 
+
+for x in rang(1,10):
+  print x  # print 1-9, BTW, python 的print会自动换行
+  
+  
+25. ranges （commonly use for for loops）
+range (7) # 0-6
+range(1,8) #1-7 永远最右侧的不包
+range(1,10,2) # give odd 1,3,5,7,9  - the last one is 间距
+range(7,0,-1) #7-1
+  
+list(range(10)) #ok
+tricky:  
+>>> nums = range(1,5)
+>>> print(nums)
+#range(1, 5)
+
+
+26. while loop
+while bool_expression:
+  do sth
+
+for num in range(1,11):
+  print(num)
+<=>
+num = 1
+while num < 11:
+  num += 1
+  print(num)
+
+27.break
+to exit out of a loop immediatly 
+
+28. style for python: 
+PEP8(style Guide for python code!)
+autopep 8 --inplace ugly_code.py (need to install the package)
+
