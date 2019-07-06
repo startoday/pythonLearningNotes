@@ -41,3 +41,14 @@ root.mainloop() #===================
 # DON'T WORRY ABOUT ANY OF THIS CODE
 
 
+3.map
+# a standard function that accepts at least two arguments: a funtion and a iterable(list, strings, set, dictionary...)
+#runs the lambda for each value in the iterable and returns a map object which can be converted into another data structure
+
+nums = [1,2,5,7,9]
+doubles = map(lambda x : x *2, nums)
+#map can be converted only once--#<map object at 0x104bc9e48>
+res = list(doubles) 
+print(res) #[2, 4, 10, 14, 18]
+
+
