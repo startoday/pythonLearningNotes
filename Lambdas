@@ -1,0 +1,43 @@
+1. lambda--- for the function never use again --single line function with no name
+square= lambda num:num *num #lambda is automatically returned
+print(square(7)) #49
+
+add = lambda a,b :a+b
+print(add(2,9))
+
+def square2(num) : return num * num
+
+print(square2(8)) #64
+
+print(square2.__name__) # square2
+print(square.__name__) #<lambda>  ---lambda function don't have name
+print(add.__name__) #<lambda>  
+
+#example
+import tkinter as tk
+# DON'T WORRY ABOUT ANY OF THIS CODE
+root = tk.Tk()#=====================
+frame = tk.Frame(root)#=============
+frame.pack()#=======================
+# DON'T WORRY ABOUT ANY OF THIS CODE
+
+# Don't need this function if we use a lambda 
+# def say_hi():
+#     print("HELLO!")
+
+button = tk.Button(frame, 
+                   text="CLICK ME", 
+                   fg="red",
+                   command=lambda: print("Hello"))
+button2 = tk.Button(frame, 
+                   text="CLICK ME", 
+                   fg="red",
+                   command=lambda: print("Bye"))
+
+
+# DON'T WORRY ABOUT ANY OF THIS CODE
+button.pack(side=tk.LEFT) #=========
+root.mainloop() #===================
+# DON'T WORRY ABOUT ANY OF THIS CODE
+
+
