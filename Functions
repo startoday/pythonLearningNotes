@@ -254,4 +254,53 @@ evennly's favoarte color is tea
      2-*args
      3-default parameters
      4-**kwargs
+     
+def display_info(a, b, *args, instructor = "colt", **kwargs):
+	return [a,b,args,instructor,kwargs]
+print(display_info(1,2,3,last_name = "steele", job = "instructor"))
+#[1, 2, (3,), 'colt', {'last_name': 'steele', 'job': 'instructor'}]
+#注意只有一个元素的tuple
 
+13. use * as an argument: argument unpacking 
+def sum_all_values (*args):
+	print(args) # (1, 2, 3, 4, 5, 6)
+	total = 0
+	for num in args:
+		total += num
+	print(total)
+
+nums = [1,2,3,4,5,6]
+
+#sum_all_values(nums) #TypeError: unsupported operand type(s) for +=: 'int' and 'list'
+#args:  ([1, 2, 3, 4, 5, 6],) ---只有一个元素的tuple， num是第一个元素（list），无法与total（int）相加
+
+#解决方法：
+sum_all_values(*nums) #21
+
+
+
+
+14.use ** to unpack dictionary
+def display_names(first,second):
+	print(f"{first} says hello to {second}")
+
+names = {"first": "colt", "second":"Rust"} #should be the name passed in para
+
+display_names(**names) #colt says hello to Rust
+
+#exercise: 学习get（） 的用法 --可以传两个参数：get（要查的值，是None的话设为 default）
+
+def calculate(**kwargs):
+    operation_lookup = {
+        'add': kwargs.get('first', 0) + kwargs.get('second', 0),
+        'subtract': kwargs.get('first', 0) - kwargs.get('second', 0),
+        'divide': kwargs.get('first', 0) / kwargs.get('second', 0),
+        'multiply': kwargs.get('first', 0) * kwargs.get('second', 0)
+    }
+    is_float = kwargs.get('make_float', False)
+    operation_value = operation_lookup[kwargs.get('operation', '')]
+    if is_float:
+        final = "{} {}".format(kwargs.get('message','The result is'), float(operation_value))
+    else:
+        final = "{} {}".format(kwargs.get('message','The result is'), int(operation_value))
+    return final
