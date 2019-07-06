@@ -191,3 +191,67 @@ def compact(l):
     return[ k for k in l if k == True]
 
 
+10. *args
+#A special operator we can pass to a function
+#gathers remaining arguments as a tuple
+#just start with * (don't need to call args)
+
+def sum_all_nums0(*args):
+	print(args)
+sum_all_nums0(4,6) #(4, 6)
+
+
+#now it will work with all numbers of arguments
+def sum_all_nums(*args):
+	total = 0
+	for num in args:
+		total += num
+	return total
+
+
+print(sum_all_nums(4,6,8,4)) #22 
+print(sum_all_nums(4,6))  #10
+
+
+def sum_all_nums2(num1, num2, *args):
+	total = 0
+	for num in args:
+		total += num
+	return total
+print(sum_all_nums2(4,6,8,4)) #12 -- this way num1 and num2 is ignored
+print(sum_all_nums2(4,6))  #0 --empty tuple
+
+def ensure_correct_info(*args):
+	if "colt" in args and "steel" in args:
+		return "welcome back colt"
+	return"who you are"
+
+print(ensure_correct_info("hello", 78)) #who you are
+print(ensure_correct_info("hello", "colt")) #who you are
+print(ensure_correct_info("hello", "Colt", "steel")) #who you are --case sensitive
+print(ensure_correct_info("hello", "colt", "steel")) #welcome back colt
+
+
+11. **kwargs
+#gathers remaining keyword arguments as a dictionary
+
+def fav_colors(**kwargs):
+	print(kwargs)
+	for person, color in kwargs.items():
+		print(f"{person}'s favoarte color is {color}")
+
+fav_colors(colt = "purp", ruby = "red", evennly = "tea") #{'colt': 'purp', 'ruby': 'red', 'evennly': 'tea'}
+#传参数 colt 不可以带引号，--SyntaxError: keyword can't be an expression
+'''
+colt's favoarte color is purp
+ruby's favoarte color is red
+evennly's favoarte color is tea
+'''
+
+
+12.parameter ordering
+     1-parameters
+     2-*args
+     3-default parameters
+     4-**kwargs
+
