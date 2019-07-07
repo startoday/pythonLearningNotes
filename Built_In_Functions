@@ -33,7 +33,7 @@ def is_all_strings(lst):
 
 3.sorted()
 #sorted() returns a new sorted list from the items in iterable
-#remember nums.sort() is inplace()!!! -- which is also a list specific method
+#remember nums.sort() is inplace()!!! -- which is also a list specific method, can't use on other objects
 #sorted method can accept iterable stuff even it is a tuple
 
 more_numbers = [6,1,8,2]
@@ -61,3 +61,10 @@ sorted(users,key=lambda user: user['username'])
 # Finding our most active users...
 # Sort users by number of tweets, descending
 sorted(users,key=lambda user: len(user["tweets"]), reverse=True)
+
+
+4. max() and min()
+max() # return the largest item in an iterable or the largest of two or more arguments
+print(max(1,43,6)) #43
+print(max("awesome world")) #w
+print(min("awesome world")) #" " ---空格更小
