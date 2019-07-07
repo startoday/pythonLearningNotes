@@ -1,0 +1,23 @@
+1. any and all
+all(): # return True if all elements of the iterable are truthy(or if the iterable is empty)
+print(all([0,1,2,3])) #False
+print(all([])) #True
+print(all([char for char in "eio" if char in "aeiou"])) #True
+print(all([num for num in [1,2,3] if num %2 == 0 ])) #True
+print(all([num for num in [0,2,3] if num %2 == 0 ])) #False
+people =["calr", "cass"]
+print(all (name[0] == "c" for name in people)) ##True
+
+any(): return True if any elements of the iterable are truthy (if the iterable is empty--false)
+print(any([0,1,2,3])) #True
+print(any([])) #False
+
+
+2.generator expression
+print(type((name[0] == "c" for name in people))) #<class 'generator'>
+# save space, memory, if you only need it once, don't need a list(comprehension) to store then you can use it 
+
+import sys
+# A simple comparison of size (in Bytes)
+list_comp = sys.getsizeof([x * 10 for x in range(1000)]) #List Comprehension: 9024 byte
+gen_exp = sys.getsizeof(x * 10 for x in range(1000)) # Generator Expression: 120 bytes
