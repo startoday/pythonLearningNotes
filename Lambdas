@@ -52,3 +52,21 @@ res = list(doubles)
 print(res) #[2, 4, 10, 14, 18]
 
 
+4.filter
+#There is a lambda for each value in the iterable
+#returns filter object which can be converted into other iterables
+#The object contains only the values that return true to the lambda
+
+lis = [1, 2, 3, 4]
+evens = list(filter(lambda x: x-1 ==3, lis)) #第二个参数是要循环的变量集
+print(evens) #[4]
+
+names = ["austin", "penny", "angel", "billy"]
+a_names = filter(lambda n : n[0] == 'a', names)
+print(type(a_names)) #<class 'filter'>
+print(list(a_names)) #['austin', 'angel']
+print(list(a_names)) #[] --#转化完只有效一次
+
+names2 = ["Lalali", "Colt", "Rusty"]
+print(list(map(lambda name : f"Your instructor is {name}", filter(lambda value: len(value) < 5,names2))))
+#['Your instructor is Colt']
