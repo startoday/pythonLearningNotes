@@ -21,3 +21,11 @@ import sys
 # A simple comparison of size (in Bytes)
 list_comp = sys.getsizeof([x * 10 for x in range(1000)]) #List Comprehension: 9024 byte
 gen_exp = sys.getsizeof(x * 10 for x in range(1000)) # Generator Expression: 120 bytes
+
+#Using a Generator Expression
+def is_all_strings(lst):
+    return all(type(l) == str for l in lst)
+ 
+#Using a List Comprehension
+def is_all_strings(lst):
+    return all([type(l) == str for l in lst])
