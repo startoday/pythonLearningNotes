@@ -68,3 +68,20 @@ max() # return the largest item in an iterable or the largest of two or more arg
 print(max(1,43,6)) #43
 print(max("awesome world")) #w
 print(min("awesome world")) #" " ---空格更小
+
+names = ['Arya', "Samson", "Dora", "Tim"]
+print(min(names)) #Arya
+print(max(names)) #Tim--直接还是按照alphabetally的不是按照字符长度先排
+print(min(names, key = lambda n: len(n))) #Tim
+print(min(len(n) for n in names)) #3
+
+5.reversed() #not reverse !
+reversed(0 # return a reverse iterator
+#reverse is just for list, also inplace
+#这俩是一样的都是4-0 
+for x in reversed(range(0,5)) :
+	print(x)
+
+for x in range(4,-1,-1): #注意range倒数也还是需要顺序反着写，包左不包右依然存在
+	print(x)
+
