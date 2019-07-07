@@ -29,3 +29,18 @@ def is_all_strings(lst):
 #Using a List Comprehension
 def is_all_strings(lst):
     return all([type(l) == str for l in lst])
+
+
+3.sorted()
+#sorted() returns a new sorted list from the items in iterable
+#remember nums.sort() is inplace()!!! -- which is also a list specific method
+#sorted method can accept iterable stuff even it is a tuple
+
+more_numbers = [6,1,8,2]
+new_numbers = sorted(more_numbers)
+new_numbers2 = sorted(more_numbers, reverse = True)
+print(more_numbers) #[6, 1, 8, 2]
+print(new_numbers) #[1, 2, 6, 8]
+print(new_numbers2) # [8, 6, 2, 1]
+print(sorted((1,56,3,76))) # [1, 3, 56, 76]
+
