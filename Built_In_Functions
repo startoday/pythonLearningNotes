@@ -85,3 +85,8 @@ for x in reversed(range(0,5)) :
 for x in range(4,-1,-1): #注意range倒数也还是需要顺序反着写，包左不包右依然存在
 	print(x)
 
+5.len()
+'hello'__len__() //double underscore ---you can implement it by yourself; this is called by len() -- define your own len()
+
+
+
