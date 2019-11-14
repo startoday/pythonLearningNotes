@@ -1,0 +1,5 @@
+max: 
+float('inf')
+
+min
+fload('-inf')
