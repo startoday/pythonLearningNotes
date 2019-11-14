@@ -1,0 +1,13 @@
+String 是不可变的
+
+str1 = 'Hello'
+str2 ='World!'
+
+# using +
+print('str1 + str2 = ', str1 + str2)
+=========================================
+“，” 会提供空格， 
+“+” 不会提供空格
+
+# using *
+print('str1 * 3 =', str1 * 3)
