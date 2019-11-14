@@ -1,0 +1,58 @@
+1. collections.deque()
+append()
+appendleft()
+pop()
+popleft()
+
+--O(1)
+
+2. collections.OrderedDict()
+KEY's order is the insertion order!
+
+3. defaultdict()
+
+from collections import defaultdict
+stats = defaultdict(int)
+stats['my_counter'] += 1
+
+normal dict:
+
+stats = {}
+key = 'my_counter'
+if key not in stats:
+   stats[key] = 0
+stats[key] += 1
+
+--->[] can't take the case where key is not in!
+so we have to pay attention to that!
+
+
+
+4. heapq / PriorityQueue()
+qut()
+get()
+--> O(lgn)
+from queue import PriorityQueue
+
+q = PriorityQueue()
+
+q.put(4)
+q.put(2)
+q.put(5)
+q.put(1)
+q.put(3)
+
+while not q.empty():
+    next_item = q.get()
+    print(next_item)
+    
+    
+    
+    
+    
+5. bisect
+二分法 -> O(logN)
+bisect(list, num, beg,end)-->upper bound
+bisect_left(list, num, beg,end)-->lower bound
+
+
