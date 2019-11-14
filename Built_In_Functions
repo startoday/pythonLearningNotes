@@ -63,6 +63,13 @@ sorted(users,key=lambda user: user['username'])
 sorted(users,key=lambda user: len(user["tweets"]), reverse=True)
 
 
+sorted(iterable, key=key, reverse=reverse) -> return a new list
+iterable	Required. The sequence to sort, list, dictionary, tuple etc.
+key		Optional. A Function to execute to decide the order. Default is None
+reverse		Optional. A Boolean. False will sort ascending, True will sort descending. Default is False
+
+
+
 4. max() and min()
 max() # return the largest item in an iterable or the largest of two or more arguments
 print(max(1,43,6)) #43
