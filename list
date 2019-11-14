@@ -1,0 +1,10 @@
+1. for a 2d list:
+
+ # Creates a 2 x 5 matrix [[ num for _ in range(col)] for _ in range(row)]
+ Matrix = [[0 for y in xrange(5)] for x in xrange(2)]
+ 
+ 
+ 2. list vs tuple
+ space: tuple is smaller
+ tuple has hash function for map
+ tuple can't change!
