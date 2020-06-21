@@ -1,0 +1,40 @@
+用Counter 来取代{} 
+https://zhuanlan.zhihu.com/p/68407137
+
+我们在采用 dict 的时候，一般都需要判断键是否存在，如果不存在，设置一个默认值，存在则采取其他的操作，
+但这个做法其实需要多写几行代码，那么是否有更高效的写法，可以减少代码，但可读性又不会降低呢。
+
+# Count Characters
+print(Counter('abccccccddddd'))  
+# Count List elements
+print(Counter([1, 2, 3, 4, 5, 1, 2]))  
+输出结果：
+
+Counter({'c': 6, 'd': 5, 'a': 1, 'b': 1})
+Counter({1: 2, 2: 2, 3: 1, 4: 1, 5: 1})
+
+
+既然 Counter 这么好用，是不是只需要 Counter 就可以了？答案当然是否定的，
+因为 Counter 的问题就是其数值必须是整数，本身就是用于统计数量，
+因此如果我们需要的数值是字符串，列表或者元组，那么就不能继续用它。
+
+这个时候，defaultdict 就派上用场了。它相比于 dict 的最大区别就是可以设置默认的数值，即便 key 不存在。例子如下：
+
+s = [('color', 'blue'), ('color', 'orange'), ('color', 'yellow'), ('fruit', 'banana'), ('fruit', 'orange'),
+     ('fruit', 'banana')]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+print(d)  
+
+这里需要注意的就是列表和集合的添加元素方法不相同，列表是list.append()，而集合是set.add(）
+
+在 dict 有一个方法setdefault()，利用它也可以实现比较简洁的代码：
+
+s = [('color', 'blue'), ('color', 'orange'), ('color', 'yellow'), ('fruit', 'banana'), ('fruit', 'orange'),('fruit', 'banana')]
+a = dict()
+for k, v in s:
+    a.setdefault(k, []).append(v)
+print(a)
+但官方文档也说了，defaultdict 的实现要比这种方法更加快速和简单。
+
