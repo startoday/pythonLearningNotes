@@ -1,0 +1,8 @@
+1. we can use differnt criteria for sorting
+
+  sorted(inputlist, key = lambda e:(len(e[0]), e[0], e[1]))
+  
+  this will sort elements first by length, then by comparing the first element directly(which only used when the first element is of eauql length), 
+  then by the value of the last integer
+  
+  
