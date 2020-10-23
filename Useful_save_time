@@ -6,3 +6,5 @@
   then by the value of the last integer
   
   
+2. create dictionary based on list index
+{k: v for v, k in enumerate(lst)}
