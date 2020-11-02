@@ -1,0 +1,102 @@
+Given a string s of '(' , ')' and lowercase English characters. 
+
+Your task is to remove the minimum number of parentheses ( '(' or ')', in any positions ) so that the resulting parentheses string is valid and return any valid string.
+
+Formally, a parentheses string is valid if and only if:
+
+It is the empty string, contains only lowercase characters, or
+It can be written as AB (A concatenated with B), where A and B are valid strings, or
+It can be written as (A), where A is a valid string.
+ 
+
+Example 1:
+
+Input: s = "lee(t(c)o)de)"
+Output: "lee(t(c)o)de"
+Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        ntr = set()
+        l = 0
+        for i in range(len(s)):
+            if s[i] == "(":
+                l += 1
+            if s[i]==")":
+                l -= 1
+                if l <0 :
+                    ntr.add(i)
+                    l= 0
+        l = 0
+        for i in range(len(s) -1, -1, -1):
+            if i not in ntr:
+                if s[i] == ")":
+                    l += 1
+                if s[i]=="(":
+                    l -= 1
+                    if l <0 :
+                        ntr.add(i)
+                        l= 0
+        res = []
+        for i in range(len(s)):
+            if i not in ntr:
+                res.append(s[i])
+        return ''.join(res)
+        
+        
+# no need to have a set, use another list append can short the code
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        tmp = []
+        l = 0
+        for i in range(len(s)):
+            if s[i] == "(":
+                l += 1
+            if s[i]==")":
+                l -= 1
+            if l >=0 :
+                tmp.append(s[i])
+            else:
+                l = 0
+        l = 0
+        res = []
+        for i in tmp[::-1]:
+            if i == ")":
+                l += 1
+            if i=="(":
+                l -= 1
+            if l >=0 :
+                res.append(i)
+            else:
+                l = 0
+        return ''.join(res[::-1])
+     
+# we can further imporve the code by storing a total left and total balance for the first run, then second run, we don't need to modify the old array
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        tmp = []
+        ltotal = 0
+        balance = 0
+        for i in range(len(s)):
+            if s[i] == "(":
+                ltotal += 1
+                balance += 1
+            if s[i]==")":
+                if balance <= 0:
+                    continue
+                balance -= 1
+            tmp.append(s[i])
+
+        lleft = ltotal-balance
+        res = []
+        for i in tmp:
+            if i=="(":
+                lleft -= 1
+                if lleft < 0 :
+                    continue
+            res.append(i)
+        return ''.join(res)
+
+        
+
+        
