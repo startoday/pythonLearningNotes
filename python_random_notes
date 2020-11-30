@@ -70,3 +70,7 @@ is--checking equality
 7. python use indent to distinguish block, which is 4 spaces, it is better to use space than tab, to avoid difference between different editors
 
 8. python 里的print（） 有自动换行功效
+
+9. for installing package in jupyter
+
+https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
